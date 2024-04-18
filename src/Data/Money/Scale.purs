@@ -5,7 +5,7 @@ module Data.Money.Scale
 
 import Data.Rational (Rational, (%))
 import Data.Tuple (Tuple)
-import Data.Typelevel.Num (class Pos, D0, D1, D10, toInt')
+import Data.Typelevel.Num (class Pos, D0, D1, D10, D100, toInt')
 import Data.Typelevel.Num.Reps (type (:*))
 import Data.Typelevel.Undefined (undefined)
 import Type.Prelude (Proxy(..))
@@ -22,7 +22,7 @@ scale
   -> Rational
 scale _ = (toInt' (Proxy :: Proxy m)) % (toInt' (Proxy :: Proxy n))
 
-type D100 = ((D1 :* D0) :* D0)
+-- type D100 = ((D1 :* D0) :* D0)
 
 d100 :: D100
 d100 = undefined
